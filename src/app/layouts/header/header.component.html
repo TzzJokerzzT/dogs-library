@@ -1,0 +1,32 @@
+<nav class="header-container">
+  <div><img src="/logo.png" alt="Logo" /></div>
+  <div class="input-search-container">
+    <app-input
+      [options]="nameDogs"
+      (inputDog)="handleInput($event)"
+    ></app-input>
+    <app-button
+      ariaLabel="Search dog"
+      icon="search"
+      (click)="searchDog()"
+    ></app-button>
+  </div>
+  <div class="button-container">
+    <div>
+      <app-button
+        ariaLabel="Ir al home"
+        text="Home"
+        icon="home"
+        (click)="goToHomePage()"
+      ></app-button>
+    </div>
+    <div style="margin: 0 2rem 0 2rem">
+      <app-button
+        arialLabel="Go to favorite"
+        text="Favorite"
+        icon="favorite"
+        (click)="goToFavoritePage()"
+      ></app-button>
+    </div>
+  </div>
+</nav>
