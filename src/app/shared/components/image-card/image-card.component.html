@@ -1,1 +1,9 @@
-<p>image-card works!</p>
+<mat-card appearance="outlined" class="card">
+  <mat-card-header>
+    {{ title }}
+  </mat-card-header>
+  <img src="{{ content }}" alt="{{ imgName }}" mat-card-image />
+  <mat-card-footer class="footer">
+    <ng-content></ng-content>
+  </mat-card-footer>
+</mat-card>

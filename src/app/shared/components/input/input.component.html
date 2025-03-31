@@ -1,0 +1,21 @@
+<form class="form-container">
+  <mat-form-field>
+    <mat-label>Search you dog</mat-label>
+    <input
+      type="text"
+      placeholder="Pick you a dog"
+      aria-label="Dogs"
+      matInput
+      maxLength="16"
+      [(ngModel)]="name"
+      [formControl]="myControl"
+      [matAutocomplete]="auto"
+      (ngModelChange)="sendName()"
+    />
+    <mat-autocomplete #auto="matAutocomplete">
+      @for (option of filteredOptions | async; track option) {
+        <mat-option [value]="option">{{ option }}</mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

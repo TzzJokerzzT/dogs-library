@@ -1,1 +1,16 @@
-<p>button works!</p>
+<button
+  mat-fab
+  extended
+  [attr.aria-label]="ariaLabel"
+  [attr.type]="buttonType"
+  [disabled]="disabled"
+  [tabindex]="tabindex"
+  (click)="handleClick($event)"
+>
+  @if (icon) {
+    <mat-icon aria-hidden="true">{{ icon }}</mat-icon>
+  }
+  @if (text) {
+    {{ text }}
+  }
+</button>
