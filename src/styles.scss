@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+@use "./app/styles/styles.scss" as my-theme;
+
+html {
+  color-scheme: light dark;
+  @include mat.theme(
+    (
+      color: (
+        theme-type: light,
+        primary: my-theme.$primary-palette,
+        tertiary: my-theme.$tertiary-palette,
+      ),
+      typography: sans-serif,
+      density: 0,
+    )
+  );
+} /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 1080px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
