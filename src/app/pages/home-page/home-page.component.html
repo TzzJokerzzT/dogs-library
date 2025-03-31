@@ -1,1 +1,28 @@
-<p>home-page works!</p>
+<app-header></app-header>
+<div class="home-container" *ngIf="isClient">
+  <div class="button-container">
+    <app-button text="Random" (clicked)="generateNewRandomDogs()"></app-button>
+  </div>
+  <div *ngIf="isLoading()" class="spinner-container">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div *ngIf="!isLoading()" class="card-container">
+    <app-image-card
+      *ngFor="
+        let breed of isShowRandom()
+          ? imageByQuantity().message
+          : breedImages().message;
+        let i = index
+      "
+      class="card"
+      content="{{ breed }}"
+      imgName="{{ i }}"
+    >
+      <app-button
+        (click)="addFavoriteDog(breed)"
+        text="Add to favorite"
+        icon="favorite"
+      ></app-button>
+    </app-image-card>
+  </div>
+</div>
