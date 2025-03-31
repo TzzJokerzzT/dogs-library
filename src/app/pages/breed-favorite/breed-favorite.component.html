@@ -1,1 +1,18 @@
-<p>breed-favorite works!</p>
+<app-header></app-header>
+<div class="home-container" *ngIf="isClient">
+  <div class="button-container"></div>
+  <div class="card-container">
+    <app-image-card
+      *ngFor="let favorite of favorites; let i = index"
+      class="card"
+      content="{{ favorite }}"
+      imgName="{{ i }}"
+    >
+      <app-button
+        (click)="removeFavorite(favorite)"
+        text="Remove favorite"
+        icon="delete"
+      ></app-button>
+    </app-image-card>
+  </div>
+</div>
