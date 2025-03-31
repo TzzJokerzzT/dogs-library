@@ -13,3 +13,13 @@
 .button-container {
   margin-bottom: 2rem;
 }
+
+.no-favorites-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50rem;
+  font-size: 2rem;
+}
