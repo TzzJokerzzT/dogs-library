@@ -15,6 +15,11 @@ export interface RandomImageResponse {
   message: string;
 }
 
+export interface RandomImageResponseByQuantity {
+  status: 'success' | 'error';
+  message: string[];
+}
+
 export interface ApiErrorResponse {
   status: 'error';
   message: string;
@@ -22,11 +27,12 @@ export interface ApiErrorResponse {
 }
 
 export interface BreedWithSubbreeds {
-  name: string;
-  subbreeds: string[];
+  status: 'success' | 'error';
+  message: string[];
 }
 
 export type SearchParams = {
-  breed: string;
+  breed?: string;
   subbreed?: string;
+  number?: number;
 };

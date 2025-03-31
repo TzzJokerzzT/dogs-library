@@ -1,1 +1,1 @@
-const baseUrl = 'https://dog.ceo/api/breed';
+export const baseUrl: string = 'https://dog.ceo/api/';
